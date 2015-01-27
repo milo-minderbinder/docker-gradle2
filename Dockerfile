@@ -1,7 +1,6 @@
-FROM mminderbinder/java-jdk7:0.9.15
+FROM mminderbinder/java-jdk7
 MAINTAINER Milo Minderbinder <minderbinder.enterprises@gmail.com>
 
-ENV HOME /root
 CMD ["/sbin/my_init"]
 
 RUN add-apt-repository ppa:cwchien/gradle
