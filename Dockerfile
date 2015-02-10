@@ -16,6 +16,8 @@ RUN chmod +x /usr/local/bin/gradle-build.sh
 VOLUME $GRADLE_PROJECTS_DIR
 VOLUME $GRADLE_USER_HOME
 
+WORKDIR $GRADLE_PROJECTS_DIR
+
 # Clean up APT when done
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
