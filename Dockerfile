@@ -1,4 +1,6 @@
-FROM mminderbinder/java-jdk7:0.9.15
+# mminderbinder/gradle2:oracle-java8
+# Gradle2 with Oracle Java 8 JDK Docker Image
+FROM mminderbinder/java-jdk:oracle-java8
 MAINTAINER Milo Minderbinder <minderbinder.enterprises@gmail.com>
 
 
