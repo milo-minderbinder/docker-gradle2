@@ -1,6 +1,6 @@
-# mminderbinder/gradle2:oracle-java8
-# Gradle2 with Oracle Java 8 JDK Docker Image
-FROM mminderbinder/java-jdk:oracle-java8
+# mminderbinder/gradle2:oracle-java7
+# Gradle2 with Oracle Java 7 JDK Docker Image
+FROM mminderbinder/java-jdk:oracle-java7
 MAINTAINER Milo Minderbinder <minderbinder.enterprises@gmail.com>
 
 
@@ -15,6 +15,8 @@ RUN chmod +x /usr/local/bin/gradle-build.sh
 
 VOLUME $GRADLE_PROJECTS_DIR
 VOLUME $GRADLE_USER_HOME
+
+WORKDIR $GRADLE_PROJECTS_DIR
 
 # Clean up APT when done
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
