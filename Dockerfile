@@ -1,6 +1,6 @@
-# mminderbinder/gradle2:oracle-java7
-# Gradle2 with Oracle Java 7 JDK Docker Image
-FROM mminderbinder/java-jdk:oracle-java7
+# mminderbinder/gradle2:oracle-java6
+# Gradle2 with Oracle Java 6 JDK Docker Image
+FROM mminderbinder/java-jdk:oracle-java6
 MAINTAINER Milo Minderbinder <minderbinder.enterprises@gmail.com>
 
 
