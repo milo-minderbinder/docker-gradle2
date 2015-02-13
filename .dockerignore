@@ -2,3 +2,5 @@
 *.pyc
 *.log
 .git
+README.md
+run-gradle2.sh
