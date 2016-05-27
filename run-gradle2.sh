@@ -6,10 +6,10 @@ if [[ -n "$GRADLE_USER_HOME" ]]; then
 	echo "Will mount \$GRADLE_USER_HOME with: '${mnt_gradle}'"
 fi
 
-mnt_m2=""
-if [[ -n "$M2_HOME" ]]; then
-	mnt_m2="-v $M2_HOME:/mnt/.m2"
-	echo "Will mount \$M2_HOME with: '${mnt_m2}'"
+mnt_maven_user_home=""
+if [[ -n "$MAVEN_USER_HOME" ]]; then
+	mnt_maven_user_home="-v ${MAVEN_USER_HOME}:/root/.m2"
+	echo "Will mount \$MAVEN_USER_HOME with: '${mnt_maven_user_home}'"
 fi
 
 usage() {
@@ -36,4 +36,4 @@ if [[ -n "$1" ]]; then
 fi
 
 echo "Running gradle2:${tag} image with ${gradle_projects_dir} mounted on /mnt/gradle-projects"
-docker run -it --rm $mnt_gradle $mnt_m2 -v ${gradle_projects_dir}:/mnt/gradle-projects --name gradle2 mminderbinder/gradle2:${tag} bash
+docker run -it --rm $mnt_gradle $mnt_maven_user_home -v ${gradle_projects_dir}:/mnt/gradle-projects --name gradle2 mminderbinder/gradle2:${tag} bash
